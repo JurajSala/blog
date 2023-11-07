@@ -17,7 +17,7 @@ import api from "./api/posts";
 import useWindowSize from './hooks/useWindowSize';*/
 import { useEffect } from "react";
 import useAxiosFetch from './hooks/useAxiosFetch';
-import { action, useStoreActions } from 'easy-peasy';
+import { useStoreActions } from 'easy-peasy';
 
 
 function App() {
@@ -92,7 +92,7 @@ const setPosts=useStoreActions((actions)=>actions.setPosts);
 
   useEffect(() => {
       setPosts(data);
-  }, [data]);
+  }, [data, setPosts]);
   return (
     <Router>
       <div className="App">
